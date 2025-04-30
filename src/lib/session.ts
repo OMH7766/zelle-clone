@@ -1,6 +1,8 @@
-import { IronSessionOptions } from 'iron-session';
 
-export const sessionOptions: IronSessionOptions = {
+
+import type { SessionOptions } from 'iron-session';
+
+export const sessionOptions: SessionOptions = {
   password: process.env.NEXTAUTH_SECRET!,
   cookieName: 'zelle-clone-session',
   cookieOptions: {
