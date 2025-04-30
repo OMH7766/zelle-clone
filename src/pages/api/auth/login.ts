@@ -1,9 +1,10 @@
+import type { NextApiRequest, NextApiResponse } from 'next';
 import { withIronSessionApiRoute } from 'iron-session/next';
 import { sessionOptions } from '../../../lib/session';
 import prisma from '../../../lib/prisma';
 
 export default withIronSessionApiRoute(
-  async (req, res) => {
+  async (req: NextApiRequest, res: NextApiResponse) => {
     const { email, phone } = req.body;
     if (!email || !phone) {
       return res.status(400).json({ error: 'Email and phone required' });
